@@ -38,7 +38,7 @@ function onGalleryContainerClick(event) {
     return
   }
   galleryItems.map((item) => {
-    if (item.original === event.target.dataset.source) {
+    if (item.original == event.target.dataset.source) {
       const instance = basicLightbox.create(`<img src=${item.original} width="800" height="600">`);
       instance.show()
     };
