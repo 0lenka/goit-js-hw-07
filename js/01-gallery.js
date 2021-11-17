@@ -21,6 +21,7 @@ function createGalleryMarkup(galleryItems) {
       src=${preview}
       data-source="large-image.jpg"
       alt=${description}
+      onClick = onGalleryContainerClick()
     />
   </a>
 </div>`;
@@ -32,7 +33,7 @@ console.log(galleryItems);
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 function onGalleryContainerClick(event) {
-  event.preventDefault()  
+  
   if (!event.target.classList.contains("gallery__image")) {
     return
   }
@@ -43,7 +44,9 @@ function onGalleryContainerClick(event) {
     };
     
   });
+   event.preventDefault() 
 }
+
 
 
 
