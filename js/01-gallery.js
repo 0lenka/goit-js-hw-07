@@ -21,7 +21,7 @@ function createGalleryMarkup(galleryItems) {
       src=${preview}
       data-source="large-image.jpg"
       alt=${description}
-      onClick = onGalleryContainerClick()
+      onClick="window.open(this.src)
     />
   </a>
 </div>`;
@@ -44,7 +44,7 @@ function onGalleryContainerClick(event) {
     };
     
   });
-   event.preventDefault() 
+  event.preventDefault();
 }
 
 
