@@ -21,7 +21,6 @@ function createGalleryMarkup(galleryItems) {
       src=${preview}
       data-source="large-image.jpg"
       alt=${description}
-      onClick="window.open(this.src)
     />
   </a>
 </div>`;
