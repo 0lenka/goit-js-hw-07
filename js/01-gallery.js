@@ -4,16 +4,11 @@ import { galleryItems } from './gallery-items.js';
 const galleryContainer = document.querySelector(".gallery")
 const galleryMarkup = createGalleryMarkup(galleryItems)
 
-// const galleryImageOriginal = onGalleryContainerClick(event)
-
 galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
-console.log(createGalleryMarkup(galleryItems))
-
-
 function createGalleryMarkup(galleryItems) {
-    return galleryItems.map(({ preview, original, description }) => {
-      return `<div class="gallery__item">
+  return galleryItems.map(({ preview, original, description }) => {
+    return `<div class="gallery__item">
   <a class="gallery__link" href=${original}>
     <img
       class="gallery__image"
@@ -23,24 +18,22 @@ function createGalleryMarkup(galleryItems) {
     />
   </a>
 </div>`;
-    }).join("")
+  }).join("");
 }
 
-
-console.log(galleryItems);
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 function onGalleryContainerClick(event) {
    event.preventDefault();
   if (!event.target.classList.contains("gallery__image")) {
-    return
+    return;
   }
   galleryItems.map((item) => {
-    if (item.preview==event.srcElement.currentSrc) {
+    if (item.preview===event.srcElement.currentSrc) {
       const instance = basicLightbox.create(` <div class="modal">
       <img src=${item.original} width="800" height="600">
       </div>`);
-      instance.show()
+      instance.show();
     };
   });
 }
