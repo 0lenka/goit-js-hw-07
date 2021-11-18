@@ -24,9 +24,9 @@ function onGalleryContainerClick(event) {
     if (!event.target.classList.contains("gallery__image")) {
         return;
     };
-    if (item.preview === event.srcElement.currentSrc) {
-        lightbox.options.captionData = `${event.target.getAttribute("alt")}`;
-        lightbox.options.captionType = 'text';
-        lightbox.options.captionDelay = 250;
-    }
+
+    lightbox.options.captionData = `${event.target.getAttribute("alt")}`;
+    lightbox.options.captionType = 'text';
+    lightbox.options.captionDelay = 250;
+    
 }
