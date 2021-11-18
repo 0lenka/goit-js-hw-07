@@ -36,7 +36,7 @@ function onGalleryContainerClick(event) {
     return
   }
   galleryItems.map((item) => {
-    if (item.original === item.preview==event.srcElement.currentSrc) {
+    if (item.original == item.preview==event.srcElement.currentSrc) {
       const instance = basicLightbox.create(` <div class="modal">
       <img src=${item.original} width="800" height="600">
       </div>`);
