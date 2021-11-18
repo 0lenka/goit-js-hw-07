@@ -1,5 +1,4 @@
 import { galleryItems } from './gallery-items.js';
-
 // Change code below this line
 
 const galleryContainer = document.querySelector(".gallery")
@@ -32,18 +31,18 @@ console.log(galleryItems);
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 function onGalleryContainerClick(event) {
-  
+   event.preventDefault();
   if (!event.target.classList.contains("gallery__image")) {
     return
   }
   galleryItems.map((item) => {
-    if (item.original == event.target.dataset.source) {
-      const instance = basicLightbox.create(`<img src=${item.original} width="800" height="600">`);
+    if (item.original === item.preview==event.srcElement.currentSrc) {
+      const instance = basicLightbox.create(` <div class="modal">
+      <img src=${item.original} width="800" height="600">
+      </div>`);
       instance.show()
     };
-    
   });
-  event.preventDefault();
 }
 
 
