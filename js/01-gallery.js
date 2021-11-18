@@ -27,15 +27,13 @@ function onGalleryContainerClick(event) {
    event.preventDefault();
   if (!event.target.classList.contains("gallery__image")) {
     return;
-  }
-  galleryItems.map((item) => {
-    if (item.preview===event.srcElement.currentSrc) {
-      const instance = basicLightbox.create(` <div class="modal">
-      <img src=${item.original} width="800" height="600">
-      </div>`);
-      instance.show();
-    };
-  });
+  };
+  
+  const instance = basicLightbox.create(`
+  <img src=${galleryMarkup.original} width="800" height="600">`);
+  instance.show();
+  
+  
 }
 
 
